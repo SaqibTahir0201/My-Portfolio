@@ -65,18 +65,22 @@
 
 .style_switcher .color-1 {
   background: #ff0032;
+  cursor: pointer;
 }
 
 .style_switcher .color-2 {
   background: #37b182;
+  cursor: pointer;
 }
 
 .style_switcher .color-3 {
   background: #1854b4;
+  cursor: pointer;
 }
 
 .style_switcher .color-4 {
   background: #f021b2;
+  cursor: pointer;
 }
 
 .style_switcher .color-5 {
@@ -91,4 +95,5 @@
     violet,
     red
   );
+  cursor: pointer;
 }
