@@ -57,13 +57,38 @@ ul {
   display: block;
   padding: 0 30px;
   opacity: 1;
+  position: fixed;
+  left: 270px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+.section.back-section {
+  z-index: 1;
+}
+.section.active {
+  z-index: 2;
+  opacity: 1;
+  animation: slideSection 1s ease;
+}
+@keyframes slideSection {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 .hidden {
   display: none !important;
 }
-.main-content {
+/* .main-content {
   padding-left: 270px;
-}
+} */
 /*$ CONTAINER */
 .padd-15 {
   padding-left: 15px;
@@ -152,11 +177,12 @@ ul {
   left: 0;
   padding: 30px;
   z-index: 10;
+  transition: 0.3s ease;
 }
 
 .aside .logo {
   position: absolute;
-  top: 50px;
+  top: 100px;
   font-size: 32px;
   text-transform: uppercase;
 }
@@ -196,10 +222,14 @@ ul {
   top: 0;
   right: 0;
 }
+/** HAMBURGER */
 
+.aside .nav-toggler.open {
+  background-color: transparent;
+}
 .aside .nav-toggler {
-  height: 40px;
-  width: 45px;
+  height: 60px;
+  width: 70px;
   border: 1px solid var(--bg-black-50);
   cursor: pointer;
   position: fixed;
@@ -210,10 +240,48 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none !important;
+  display: none;
+  transition: 0.3s ease;
+}
+.aside .nav-toggler .ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.aside .nav-toggler .line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: var(--skin-color);
+  stroke-width: 5.5;
+  stroke-linecap: round;
+  transition: 1s cubic-bezier(0.18, 0.89, 0.77, 1.22);
+}
+.ham3 .top {
+  stroke-dasharray: 40 130;
+}
+.ham3 .middle {
+  stroke-dasharray: 40 140;
+}
+.ham3 .bottom {
+  stroke-dasharray: 40 205;
+}
+.ham3.active .top {
+  stroke-dasharray: 75 130;
+  stroke-dashoffset: -63px;
+}
+.ham3.active .middle {
+  stroke-dashoffset: -102px;
+}
+.ham3.active .bottom {
+  stroke-dasharray: 110 205;
+  stroke-dashoffset: -86px;
 }
 
-.aside .nav-toggler {
+/* .aside .nav-toggler {
   height: 2.5px;
   width: 18px;
   background: var(--skin-color);
@@ -237,7 +305,7 @@ ul {
   background: var(--skin-color);
   left: 0;
   top: 6px;
-}
+} */
 
 .aside .nav {
   margin-top: 50px;
@@ -384,7 +452,6 @@ h3.my-profession {
 }
 .about .about-content .personal-info .buttons .btn {
   margin-top: 10px;
-  margin-right: 15px;
 }
 .about .about-content .skills {
   flex: 0 0 40%;
@@ -693,12 +760,33 @@ h3.my-profession {
 /* ///////////////////////// */
 
 @media (max-width: 1400px) {
+  .section .container {
+    padding-top: 70px;
+  }
   .aside {
     left: -270px;
   }
-  .main-content {
-    padding-left: 0;
+  .aside.open {
+    left: 0;
   }
+  .aside .nav-toggler {
+    display: flex;
+    left: 30px;
+    top: 10px;
+  }
+
+  .aside .nav-toggler.open {
+    left: 300px;
+  }
+
+  .section {
+    left: 0;
+  }
+
+  .section.open {
+    left: 270px;
+  }
+
   .about .about-content .personal-info .info-item p span {
     display: block;
     margin-left: 0;
