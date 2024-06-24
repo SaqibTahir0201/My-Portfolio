@@ -161,7 +161,8 @@ ul {
   transition: 0.3s ease;
 }
 .shadow-dark {
-  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+  /* box-shadow: 0 0 20px rgba(48, 46, 77, 0.15); */
+  box-shadow: var(--skin-color) 0px 1px 3px 0px,var(--skin-color) 0px 0px 0px 1px;
 }
 /*$ ASIDE */
 .aside {
@@ -599,7 +600,8 @@ h3.my-profession {
 }
 
 .service .service-item .service-item-inner:hover {
-  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+  /* box-shadow: 0 0 20px rgba(48, 46, 77, 0.15); */
+  box-shadow: 0 0 20px var(--skin-color);
 }
 
 .service .service-item .service-item-inner .icon {
@@ -746,7 +748,8 @@ h3.my-profession {
 }
 
 .contact .contact-form .form-item .form-control:focus {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  box-shadow:  var(--skin-color) 0px 5px 15px;
 }
 .contact .contact-form .form-item textarea.form-control {
   height: 140px;
