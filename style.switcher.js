@@ -50,3 +50,13 @@ window.addEventListener("load", () => {
     dayNight.querySelector("i").classList.add("fa-moon");
   }
 });
+
+// Shery.imageEffect(".imgg", {
+//   style: 2 /*OR 5 for different variant */,
+//   config: {
+//     a: { value: 2, range: [0, 30] },
+//     b: { value: -0.9, range: [-1, 1] },
+//     zindex: { value: 5 },
+//     onMouse: { value: 1 },
+//   },
+// });

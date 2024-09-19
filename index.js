@@ -1,3 +1,6 @@
+//$ SHERY JS
+
+
 //$ typing animation
 let typed = new Typed(".typing", {
   strings: [
@@ -77,7 +80,7 @@ document.querySelector(".hire-me").addEventListener("click", function () {
   showSection(this);
   updateNav(this);
   removeBackSection();
-  addBackSection(sectionIndex)
+  addBackSection(sectionIndex);
 });
 const navTogglerBtn = document.querySelector(".nav-toggler");
 const aside = document.querySelector(".aside");
