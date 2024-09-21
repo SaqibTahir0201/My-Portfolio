@@ -1,36 +1,51 @@
 // $ TOGGLE STYLE SWITCHER:
-
 const styleSwitchToggle = document.querySelector(".style_switcher_toggler");
+const styleSwitcher = document.querySelector(".style_switcher");
 
 styleSwitchToggle.addEventListener("click", () => {
-  document.querySelector(".style_switcher").classList.toggle("open");
+  styleSwitcher.classList.toggle("open");
 });
 
-//$  HIDE STYLE SWITCHER ON SCROLL :
+// $ HIDE STYLE SWITCHER ON SCROLL OR TOUCH:
 
-window.addEventListener("scroll", () => {
-  if (document.querySelector(".style_switcher").classList.contains("open")) {
-    document.querySelector(".style_switcher").classList.remove("open");
+function closeStyleSwitcher() {
+  if (styleSwitcher.classList.contains("open")) {
+    styleSwitcher.classList.remove("open");
   }
-});
+}
+
+window.addEventListener("scroll", closeStyleSwitcher);
+document.addEventListener("touchstart", closeStyleSwitcher);
 
 //$ THEME COLORS :
 
 const alternateStyle = document.querySelectorAll(".alternate-style");
 
 function setActiveStyle(color) {
-  alternateStyle.forEach((style) => {
-    if (color === style.getAttribute("title")) {
-      style.removeAttribute("disabled");
-    } else {
-      style.setAttribute("disabled", "true");
-    }
-  });
-
-  //$ RANDOM COLOR GENERATOR
   if (color === "random") {
-    const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    // Generate random color
+    const hue = Math.floor(Math.random() * 360);
+    const saturation = Math.floor(Math.random() * (100 - 70) + 70); // 70-100%
+    const lightness = Math.floor(Math.random() * (70 - 40) + 40); // 40-70%
+    const randomColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
     document.documentElement.style.setProperty("--skin-color", randomColor);
+    
+    // Disable all preset styles
+    alternateStyle.forEach((style) => {
+      style.setAttribute("disabled", "true");
+    });
+  } else {
+    // Reset custom property if a preset color is selected
+    document.documentElement.style.removeProperty("--skin-color");
+    
+    // Enable/disable styles based on selection
+    alternateStyle.forEach((style) => {
+      if (color === style.getAttribute("title")) {
+        style.removeAttribute("disabled");
+      } else {
+        style.setAttribute("disabled", "true");
+      }
+    });
   }
 }
 
