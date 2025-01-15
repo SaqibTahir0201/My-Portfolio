@@ -4,9 +4,7 @@
   font-family: "novelo-p";
   src: url("../novelo.otf") format("truetype");
 }
-.p {
-  line-height: 1.4vw;
-}
+
 :root {
   --bg-black-900: #f2f2fc;
   --bg-black-100: #fdf9ff;
@@ -351,6 +349,7 @@ ul {
 .home .home-info {
   flex: 0 0 60%;
   max-width: 60%;
+
 }
 h3.hello {
   font-size: 40px;
@@ -370,6 +369,7 @@ h3.my-profession {
 }
 .typing {
   color: var(--skin-color);
+  font-family: "clicker script", cursive;
 }
 .home-info p {
   margin-bottom: 70px;

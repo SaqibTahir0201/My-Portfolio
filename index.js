@@ -1,16 +1,17 @@
 //$ SHERY JS
 
-
 //$ typing animation
 let typed = new Typed(".typing", {
   strings: [
     "",
-    "Front-end Web Developer",
-    "Back-end Web Developer",
-    "Full-stack Web Developer",
-    "Web Designer",
-    "Mobile Web Developer",
+    "Front-end Developer",
+    "React Developer",
+    "MERN Stack Developer",
+    "MENN Stack Developer",
+    "GSAP and ScrollTrigger Expert",
     "Web Application Developer",
+    "Backend Developer",
+    "Innovative Project Creator",
   ],
   typeSpeed: 100,
   backSpeed: 60,
