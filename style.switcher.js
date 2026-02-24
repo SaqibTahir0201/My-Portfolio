@@ -8,8 +8,12 @@ styleSwitchToggle.addEventListener("click", () => {
 
 // $ HIDE STYLE SWITCHER ON SCROLL OR TOUCH:
 
-function closeStyleSwitcher() {
+function closeStyleSwitcher(e) {
   if (styleSwitcher.classList.contains("open")) {
+    // Don't close if clicking/touching inside the style switcher
+    if (e && e.target && styleSwitcher.contains(e.target)) {
+      return;
+    }
     styleSwitcher.classList.remove("open");
   }
 }
